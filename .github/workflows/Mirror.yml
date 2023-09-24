@@ -22,7 +22,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
       - name: Push to codecommit
         env:
-          INPUT_TARGET_REPO_URL: ssh://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/momo
+          INPUT_TARGET_REPO_URL: ssh://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/test
         shell: /usr/bin/bash -xe {0}
         run: |
           export GIT_SSH_COMMAND="ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY_ID }}"
